@@ -15,16 +15,20 @@ button {
     margin: 0 auto;
 }
 
-#sketch-box {
-    height: 550px;
-    width: 550px;
+.sketch-box {
+    height: 500px;
+    width: 500px;
     border: 1px solid black;
     background-color: white;
     margin: 0 auto;
     margin-bottom: 20px;
     padding: 5px;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+}
+
+.sketch-box div{
+    border: 1px solid black;
+    background-color: lightgrey;
 }
 
 
