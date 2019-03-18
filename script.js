@@ -1,12 +1,13 @@
-let gridRow = 20;
-let grid = gridRow * gridRow;
-let sketchBox = document.querySelector('.sketch-box')
+let divRow = 16;
+let divGrid = divRow * divRow;
+let sketchBox = document.querySelector('.sketch-box');
 
-function makeGrid(gridRow, grid) {
-    for(let b = 0; b < grid; b++){
+function makeDivs() {
+    for (i = 0; i < divGrid; i++) {
         let div = document.createElement('div');
-        div.setAttribute('id', 'gridBox');
+        div.classList.add("grid-box");
         sketchBox.appendChild(div);
     }
-    sketchBox.setAttribute('style', 'grid: repeat(' + gridRow + ',auto) / repeat(' + gridRow + ',auto)');
 }
+
+makeDivs();

@@ -31,4 +31,9 @@ button {
     background-color: lightgrey;
 }
 
+.grid-box{
+    height: 2px;
+    width: 2px;
+}
+
 
