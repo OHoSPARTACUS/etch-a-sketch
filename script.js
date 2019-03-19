@@ -22,10 +22,13 @@ function changeColor() {
 }
 
 function clearGrid() {
-    let divs = document.querySelectorAll(".sketch-box div");
-    divs.forEach((div) => {
-        div.setAttribute("style", "background: white");
-    });
+    while (sketchBox.firstChild) {
+        sketchBox.removeChild(sketchBox.firstChild);
+    }
+}
+
+function randomColor() {
+    
 }
 
 makeDivs();
