@@ -20,10 +20,6 @@ function makeDivs() {
     }
 }
 
-function setDivSize() {
-    
-}
-
 function changeColor() {
     let divs = document.querySelectorAll(".sketch-box div");
     divs.forEach((div) => {
@@ -42,9 +38,16 @@ function clearGrid() {
 
 function newDivs() {
     let num = prompt("Enter a number: 1 - 100");
-    divRow = num;
-    makeDivs();
-    changeColor();
+    if (num >= 1 || num <= 100) {
+        divRow = num;
+        divGrid = divRow * divRow;
+        divSize = (500 / divRow) + "px";
+        makeDivs();
+        changeColor();
+        console.log(divRow);
+    }else{
+        return alert("Invalid input value, try again!");
+    }
 }
 
 ////////// INITIAL LOAD //////////
@@ -52,4 +55,3 @@ function newDivs() {
 makeDivs();
 changeColor();
 console.log(divSize);
-console.log;
