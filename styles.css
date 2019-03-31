@@ -6,7 +6,7 @@
 
 h1 {
     text-align: center;
-    margin: 25px 0;
+    margin: 10px 0;
 }
 
 #clear, #rainbow {
@@ -28,6 +28,14 @@ h1 {
     background-color: lightgrey;
 }
 
+#clear:active, #rainbow:active{
+    background-color: darkgrey;
+}
+
+#clear:focus, #rainbow:focus{
+    outline: 0;
+}
+
 #border {
     height: 595px;
     width: 575px;
@@ -35,6 +43,7 @@ h1 {
     border: 1px solid black;
     border-radius: 10px;
     margin: 0 auto;
+    padding-top: 10px;
     margin-bottom: 25px;
 }
 

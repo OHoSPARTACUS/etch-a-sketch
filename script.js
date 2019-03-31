@@ -4,9 +4,9 @@
 let divRow = 16;
 let divGrid = divRow * divRow;
 divSize = (500 / divRow) + "px";
-let sketchBox = document.querySelector('.sketch-box');
-let clearBtn = document.querySelector('.clear');
-let rainbowBtn =document.querySelector(".rainbow");
+const sketchBox = document.querySelector('.sketch-box');
+const clearBtn = document.querySelector('.clear');
+const rainbowBtn =document.querySelector('.rainbow');
 
 ////////// FUNCTIONS //////////
 
@@ -20,7 +20,7 @@ function makeDivs() {
     }
 }
 
-function changeColor() {
+function drawBlack() {
     let divs = document.querySelectorAll(".sketch-box div");
     divs.forEach((div) => {
         div.addEventListener("mouseover", function(e) {
@@ -43,7 +43,7 @@ function newDivs() {
         divGrid = divRow * divRow;
         divSize = (500 / divRow) + "px";
         makeDivs();
-        changeColor();
+        drawBlack();
         return console.log(divSize);
     }else if (num > 100) {
         alert("Invalid selection value, try again!");
@@ -56,8 +56,23 @@ function newDivs() {
     }
 }
 
+function randomColor(){
+    let options = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+    let randOpt = options[Math.floor(Math.random()*options.length)];
+    return randOpt;
+}
+
+function drawColors() {
+    let divs = document.querySelectorAll(".sketch-box div");
+    divs.forEach((div) => {
+        div.addEventListener("mouseover", function(e) {
+            e.target.style.backgroundColor = randomColor();
+        });
+    });
+}
+
 ////////// INITIAL LOAD //////////
 
 makeDivs();
-changeColor();
+drawBlack();
 console.log(divSize);
