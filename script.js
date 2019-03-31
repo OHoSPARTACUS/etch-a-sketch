@@ -38,15 +38,21 @@ function clearGrid() {
 
 function newDivs() {
     let num = prompt("Enter a number: 1 - 100");
-    if (num >= 1 || num <= 100) {
+    if (num <= 100) {
         divRow = num;
         divGrid = divRow * divRow;
         divSize = (500 / divRow) + "px";
         makeDivs();
         changeColor();
-        console.log(divRow);
+        return console.log(divSize);
+    }else if (num > 100) {
+        alert("Invalid selection value, try again!");
+        return console.log("Learn to follow directions, idiot.");
+    }else if (num < 1) {
+        alert("Invalid selection value, try again!");
+        return console.log("Learn to follow directions, idiot.");
     }else{
-        return alert("Invalid input value, try again!");
+        return console.log("ERROR");
     }
 }
 
