@@ -47,11 +47,15 @@ function newDivs() {
         return console.log(divSize);
     }else if (num > 100) {
         alert("Invalid selection value, try again!");
+        newDivs();
         return console.log("Learn to follow directions, idiot.");
-    }else if (num < 1) {
+    }else if (num == 0) {
         alert("Invalid selection value, try again!");
+        newDivs();
         return console.log("Learn to follow directions, idiot.");
     }else{
+        alert("Invalid selection value, try again!");
+        newDivs();        
         return console.log("ERROR");
     }
 }
