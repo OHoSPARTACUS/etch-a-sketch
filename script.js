@@ -10,7 +10,8 @@ const rainbowBtn =document.querySelector('.rainbow');
 
 ////////// FUNCTIONS //////////
 
-function makeDivs() {
+function makeDivs() {           
+    /// Creates a grid of squares that change color when hovered over using CSS sketchbox ///
     for (i = 0; i < divGrid; i++) {
         let div = document.createElement('div');
         div.classList.add("grid-box");
@@ -21,6 +22,7 @@ function makeDivs() {
 }
 
 function drawBlack() {
+    /// Uses event listeners to change grid squares to black when the cursor hovers over ///
     let divs = document.querySelectorAll(".sketch-box div");
     divs.forEach((div) => {
         div.addEventListener("mouseover", function(e) {
@@ -30,6 +32,7 @@ function drawBlack() {
 }
 
 function clearGrid() {
+    /// Clears the grid upon activation and triggers the newDivs function to create a new grid ///
     while (sketchBox.firstChild) {
         sketchBox.removeChild(sketchBox.firstChild);
     }
@@ -37,6 +40,7 @@ function clearGrid() {
 }
 
 function newDivs() {
+    /// Triggers a prompt to enter a number to set the size of the new grid - Only allows input of grid sizes 1-100 ///
     let num = prompt("Enter a number: 1 - 100");
     if (num <= 100) {
         divRow = num;
@@ -48,11 +52,11 @@ function newDivs() {
     }else if (num > 100) {
         alert("Invalid selection value, try again!");
         newDivs();
-        return console.log("Learn to follow directions, idiot.");
+        return console.log("Follow Directions!");
     }else if (num == 0) {
         alert("Invalid selection value, try again!");
         newDivs();
-        return console.log("Learn to follow directions, idiot.");
+        return console.log("Follow Directions!");
     }else{
         alert("Invalid selection value, try again!");
         newDivs();        
@@ -61,12 +65,14 @@ function newDivs() {
 }
 
 function randomColor(){
+    /// chooses a random color value from a short and simple array of colors ///
     let options = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
     let randOpt = options[Math.floor(Math.random()*options.length)];
     return randOpt;
 }
 
 function drawColors() {
+    /// uses event listeners and the randomColor function to change the colors of grid squares randomly when hovered over ///
     let divs = document.querySelectorAll(".sketch-box div");
     divs.forEach((div) => {
         div.addEventListener("mouseover", function(e) {
@@ -77,6 +83,6 @@ function drawColors() {
 
 ////////// INITIAL LOAD //////////
 
-makeDivs();
-drawBlack();
+makeDivs(); // uses divRow variable to create a grid of 16x16 by default //
+drawBlack(); 
 console.log(divSize);
